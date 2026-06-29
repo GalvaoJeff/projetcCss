@@ -1,0 +1,158 @@
+body {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "aside main"
+        "aside main"
+        "footer footer";
+    min-height: 100vh;    
+    margin: 0;
+    background-color: rgb(255, 254, 194);    
+}
+
+#left-content {
+    width: 80px;
+    height:100%;
+    background-color: #333131;
+    grid-area: aside;
+    box-sizing: border-box;
+    box-shadow: 4px 0 0 #f19203;
+    overflow: hidden;
+    transition: .2s;
+}
+
+#left-content:hover {
+    width: auto;
+}
+
+#aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* empurra o ícone pra baixo */
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+#btn-menu {
+    display: flex;
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+#btn-menu > i{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#user > i {
+    align-self: left;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#user:hover {
+    background-color: #4a4848;
+}
+
+#list-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;   
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li.item-menu a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 20px;
+    line-height: 45px;;
+    white-space: nowrap;
+    transition: .2s;
+}
+
+ul li.item-menu a:hover {
+    background-color: #4a4848; /* feedback visual no hover, opcional */
+}
+
+.item-menu:target a {
+    background-color: #4a4848; /* mesma cor do seu hover */
+}
+
+ul li.item-menu a .link {
+    margin-left: 30px;
+}
+
+ul li.item-menu a .icon {
+    font-size: 25px;
+}
+
+.item-menu {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.icon::before {
+    font-size: 25px;
+    line-height: 1;
+    color: inherit; /* garante que o ícone puxe a cor do link (branco) */
+}
+
+#principal-container {
+    border: solid 1px #333131;
+    grid-area: main;   
+}
+
+#header {
+    display: flex;
+    justify-content: space-between; /* logo na esquerda, botões na direita */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header {
+    display: flex;
+    gap: 10px; /* espaço entre os 3 botões */
+}
+
+#botton-infos {
+    grid-area: footer;
+    background-color: chocolate;
+}
+
+#logo {
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    height: 80px;
+    grid-area: logo;
+}
+
+.btn-header {
+    width: 30px;
+    height: 30px;
+}
