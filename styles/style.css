@@ -123,21 +123,24 @@ ul li.item-menu a .icon {
 }
 
 #principal-container {
-    border: solid 1px #333131;
     grid-area: main;   
 }
 
 #header {
     display: flex;
-    justify-content: space-between; /* logo na esquerda, botões na direita */
-    align-items: center;
+    justify-content: space-between;
+    align-items:center;
     padding: 10px 20px;
+    width: 100%;
 }
 
 header {
     display: flex;
+    justify-content: right;
+    align-items: center;
     gap: 10px; /* espaço entre os 3 botões */
 }
+
 
 #botton-infos {
     grid-area: footer;
@@ -150,9 +153,17 @@ header {
     align-content: flex-start;
     height: 80px;
     grid-area: logo;
+    margin-top: 20px;
 }
 
 .btn-header {
     width: 30px;
     height: 30px;
+    justify-content: right;
+    align-items: center;
+}
+
+h1 {
+    color: chocolate;
+    justify-content: center;
 }
