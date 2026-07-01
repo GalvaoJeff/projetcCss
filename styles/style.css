@@ -126,34 +126,22 @@ ul li.item-menu a .icon {
     grid-area: main;   
 }
 
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: 10px 20px;
-    width: 100%;
-}
 
 header {
     display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 10px; /* espaço entre os 3 botões */
-}
-
-
-#botton-infos {
-    grid-area: footer;
-    background-color: chocolate;
-}
-
-#logo {
-    display: flex;
-    justify-content: start;
-    align-content: flex-start;
-    height: 80px;
-    grid-area: logo;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px 2px 05px;
+    border-bottom: 1px solid #ccc;
+    width: 80%;
     margin-top: 20px;
+    margin-left: 15px;
+}
+
+#btn-header-cntnr {
+    display: flex;
+    gap: 10px; /* espaço entre os botões */
+    align-items: start; 
 }
 
 .btn-header {
@@ -164,6 +152,51 @@ header {
 }
 
 h1 {
+    display: flex;
     color: chocolate;
     justify-content: center;
+    align-items: start;
+    margin: 0;
+    padding: 0;
 }
+
+#botton-infos {
+    grid-area: footer;
+    background-color: chocolate;
+}
+
+#logo {
+    display: flex;
+    justify-content: start;
+    align-content: flex-start;
+    align-items: center;
+    height: 80px;
+    width: 82%;
+    padding: 0 0 20px 0;
+    margin: 20px 0 0 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#logo:hover {
+    box-shadow: inset 5px 50px 20px 30px rgba(255, 254, 194, 0.801),
+                inset -5px -05px 10px 10px rgba(241, 146, 3, 0.5);
+                
+    border-bottom: 1px solid #f19203;
+    border-style: none none solid none;
+}
+
+#logo a img {
+    width: 91.563px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+#logo a {
+    display: flex;
+    text-decoration: none;
+    color: chocolate;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+}
+
