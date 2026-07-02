@@ -178,8 +178,8 @@ h1 {
 }
 
 #logo:hover {
-    box-shadow: inset 5px 50px 20px 30px rgba(255, 254, 194, 0.801),
-                inset -5px -05px 10px 10px rgba(241, 146, 3, 0.5);
+    /* box-shadow: inset 5px 50px 20px 30px rgba(255, 254, 194, 0.801),
+                inset -5px -05px 10px 10px rgba(241, 146, 3, 0.5); */
                 
     border-bottom: 1px solid #f19203;
     border-style: none none solid none;
@@ -198,5 +198,58 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     align-items: center;
+}
+
+
+#highlights {
+    background-color: #f1920338;
+    text-shadow: 1px 1px 2px rgba(248, 246, 246, 0.548);
+    color:rgb(3, 3, 3);
+    padding: 10px 20px 20px 20px;
+    margin: 20px 0 0 14px;
+    width: 80%;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s, color 0.3s, box-shadow 0.6s;
+    align-items: start;
+}
+
+#highlights:hover {
+    background-color: #f19203ad;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+#highlights h2 {
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
+}
+
+#products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 10px 20px 20px 20px;
+    margin: 20px 0 0 14px;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.6s, color 0.3s, box-shadow 0.6s;
+}
+
+#products:hover {
+    background-color: #f19203ad;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+#products h2 {
+    display: flex;
+    justify-content: start;
+    margin-top: 0;
 }
 
