@@ -13,13 +13,18 @@ body {
 
 #left-content {
     width: 80px;
-    height:100%;
+    height: 100vh;              /* era 100% — agora usa a altura da tela */
+    position: sticky;           /* NOVO */
+    top: 0;                     /* NOVO: gruda no topo */
+    align-self: start;          /* NOVO: evita esticar além da própria altura no grid */
     background-color: #333131;
     grid-area: aside;
     box-sizing: border-box;
     box-shadow: 4px 0 0 #f19203;
     overflow: hidden;
     transition: .2s;
+    z-index: 10;                /* NOVO: garante que fique por cima do conteúdo ao rolar */
+
 }
 
 #left-content:hover {
@@ -175,6 +180,7 @@ h1 {
     padding: 0 0 20px 0;
     margin: 20px 0 0 20px;
     border-bottom: 1px solid #ccc;
+    
 }
 
 #logo:hover {
@@ -183,12 +189,14 @@ h1 {
                 
     border-bottom: 1px solid #f19203;
     border-style: none none solid none;
+    
 }
 
 #logo a img {
     width: 91.563px;
     height: 80px;
     margin-right: 10px;
+    
 }
 
 #logo a {
@@ -198,8 +206,11 @@ h1 {
     font-size: 30px;
     font-weight: bold;
     align-items: center;
+    
 }
 
+
+/* ===== BLOCO DESTAQUES ===== */
 
 #highlights {
     background-color: #f1920338;
@@ -208,11 +219,10 @@ h1 {
     padding: 10px 20px 20px 20px;
     margin: 20px 0 0 14px;
     width: 80%;
-    height: 100px;
+    height: auto;
     border-radius: 5px;
     box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.6s, color 0.3s, box-shadow 0.6s;
-    align-items: start;
 }
 
 #highlights:hover {
@@ -228,12 +238,17 @@ h1 {
     margin-top: 0;
 }
 
-#products {
+#highlights section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    align-items: start;
+}
+
+/* ===== BLOCO PRODUTOS ===== */
+#products {
     padding: 10px 20px 20px 20px;
-    margin: 20px 0 0 14px;
+    margin: 20px 0 20px 14px;
     width: 80%;
     border-radius: 5px;
     box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.1);
@@ -253,3 +268,195 @@ h1 {
     margin-top: 0;
 }
 
+#products section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Nome do produto embaixo da imagem */
+.product-name {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    background-color: #fffdf5;
+    color: #333;
+}
+
+/* ===== CARROSSEL + EXPANDIR (checkbox hack) ===== */
+
+.expand-toggle {
+    display: none;
+}
+
+.hl-articles,
+.product-articles {
+    position: relative;
+}
+
+/* Card individual: hover próprio, separado do hover do bloco pai */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #fffdf5;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 2; /* garante que fique por cima ao aumentar */
+}
+
+/* Área do carrossel */
+.carousel {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.carousel .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation-name: slideFade;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+}
+
+/* Pausa o slide quando o mouse está em cima (dá pra ver melhor) */
+.card:hover .slide {
+    animation-play-state: paused;
+}
+
+/* --- Destaques: 3 imagens, ciclo de 15s (5s cada) --- */
+.hl-articles .slide {
+    animation-duration: 15s;
+}
+.hl-articles .slide:nth-child(2) { animation-delay: 0s; }
+.hl-articles .slide:nth-child(3) { animation-delay: 5s; }
+.hl-articles .slide:nth-child(4) { animation-delay: 10s; }
+
+/* --- Produtos: 2 imagens, ciclo de 10s (5s cada) --- */
+.product-articles .slide {
+    animation-duration: 10s;
+}
+.product-articles .slide:nth-child(1) { animation-delay: 0s; }
+.product-articles .slide:nth-child(2) { animation-delay: 5s; }
+
+@keyframes slideFade {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    30%  { opacity: 1; }
+    45%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Overlay em tela cheia ao clicar na imagem */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.expand-toggle:checked ~ .overlay {
+    display: flex;
+}
+
+/* Trava o scroll da página com o overlay aberto (CSS moderno) */
+body:has(.expand-toggle:checked) {
+    overflow: hidden;
+}
+
+/* ===== SELOS (badges) nos Destaques ===== */
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 3;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.badge-principal { background-color: #b8860b; }   /* dourado escuro */
+.badge-vendido   { background-color: #e05a00; }   /* laranja forte */
+.badge-promocao  { background-color: #d62828; }   /* vermelho */
+.badge-poucas    { background-color: #4a4848; }   /* cinza escuro */
+
+/* ===== BOLINHAS (dots) sincronizadas com o slide ===== */
+.dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation-name: dotPulse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.card:hover .dot {
+    animation-play-state: paused;
+}
+
+/* Destaques: 3 dots, ciclo de 15s */
+.hl-articles .dot { animation-duration: 15s; }
+.hl-articles .dot:nth-child(1) { animation-delay: 0s; }
+.hl-articles .dot:nth-child(2) { animation-delay: 5s; }
+.hl-articles .dot:nth-child(3) { animation-delay: 10s; }
+
+/* Produtos: 2 dots, ciclo de 10s */
+.product-articles .dot { animation-duration: 10s; }
+.product-articles .dot:nth-child(1) { animation-delay: 0s; }
+.product-articles .dot:nth-child(2) { animation-delay: 5s; }
+
+@keyframes dotPulse {
+    0%, 30% {
+        background-color: #fff;
+        transform: scale(1.2);
+    }
+    33%, 100% {
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1);
+    }
+}

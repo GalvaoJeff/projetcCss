@@ -4,27 +4,33 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="pt-BR">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
-        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="left-content">
-            <aside id="aside">
+    <div id="left-content">
+        <aside id="aside">
             <nav id="menu">
-                <div id = "btn-menu">
+                <div id="btn-menu">
                     <i class="fi fi-bs-menu-burger"></i>
                 </div>
                 <ul id="list-menu">
@@ -57,90 +63,257 @@
             <div id="user">
                 <i class="fi fi-rr-user"></i>
             </div>
-            </aside>
-        </div>
-        
-        <div id="principal-container">
-            <main>
-                <div id="logo">
-                        <a href="#home">
-                            <img src="img/logo.png" alt=" ">
-                            <span class="link">Divino Infante Paramentos</span>
-                        </a>
-                </div>
-                
-                <header>
-                    <div id="name-page">
-                        <h1>Catálogo</h1>
-                    </div>
-                    <div id="btn-header-cntnr">
-                        <button id="first" class="btn-header"></button>
-                        <button id="second" class="btn-header"></button>
-                        <button id="third" class="btn-header"></button>
-                    </div>
-                </header>
-                
-                <div id="highlights">
-                    <h2>Destaques</h2>
-                    <section>
-                        <div class="hl-articles">
-                            <article>
-                            <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="hl-articles">
-                            <article>
-                            <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="hl-articles">
-                            <article>
-                            <img src="" alt="">
-                            </article>
-                        </div>
-                    </section>
-                </div>
-                <div id="products">
-                    <h2>Produtos</h2>
-                    <section>
-                        <div class="product-articles">
-                            <article>
-                                <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="product-articles">
-                            <article>
-                                <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="product-articles">
-                            <article>
-                                <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="product-articles">
-                            <article>
-                                <img src="" alt="">
-                            </article>
-                        </div>
-                        <div class="product-articles">
-                            <article>
-                                <img src="" alt="">
-                            </article>
-                        </div>
-                    </section>
-                </div>
-            </main>
-        </div>
+        </aside>
+    </div>
 
-        <div id="botton-infos">
-            <footer>
-                <ul>
-                    <li>Divino</li>
-                    <li>etc</li>
-                </ul>
-            </footer>
-        </div>
+    <div id="principal-container">
+        <main>
+            <div id="logo">
+                <a href="#home">
+                    <img src="img/logo.png" alt=" ">
+                    <span class="link">Divino Infante Paramentos</span>
+                </a>
+            </div>
 
-    </body>
+            <header>
+                <div id="name-page">
+                    <h1>Catálogo</h1>
+                </div>
+                <div id="btn-header-cntnr">
+                    <button id="first" class="btn-header"></button>
+                    <button id="second" class="btn-header"></button>
+                    <button id="third" class="btn-header"></button>
+                </div>
+            </header>
+
+            <div id="highlights">
+                <h2>Destaques</h2>
+                <section>
+                    <div class="hl-articles">
+                        <input type="checkbox" id="hl-expand-1" class="expand-toggle">
+                        <article class="card">
+                            <label for="hl-expand-1" class="carousel">
+                                <span class="badge badge-principal">Principal Destaque</span>
+                                <img class="slide" src="img/c-floral1.jpeg"
+                                    alt="Destaque 1 - foto 1">
+                                <img class="slide" src="img/d-floral.jpeg"
+                                    alt="Destaque 1 - foto 2">
+                                <img class="slide" src="img/i-floral.jpeg"
+                                    alt="Destaque 1 - foto 3">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Conjunto Solene Floral</h3>
+                        </article>
+                        <label for="hl-expand-1" class="overlay">
+                            <img src="img/c-floral1.jpeg"
+                                alt="Destaque 1 ampliado">
+                            <img src="img/d-floral.jpeg"
+                                alt="Destaque 1 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="hl-articles">
+                        <input type="checkbox" id="hl-expand-2" class="expand-toggle">
+                        <article class="card">
+                            <label for="hl-expand-2" class="carousel">
+                                <span class="badge badge-vendido">Mais Vendido</span>
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Destaque+2a"
+                                    alt="Destaque 2 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f19203/ffffff?text=Destaque+2b"
+                                    alt="Destaque 2 - foto 2">
+                                <img class="slide" src="https://placehold.co/400x300/703800/ffffff?text=Destaque+2c"
+                                    alt="Destaque 2 - foto 3">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Véu Bordado Clássico</h3>
+                        </article>
+                        <label for="hl-expand-2" class="overlay">
+                            <img src="https://placehold.co/800x600/f19203/ffffff?text=Destaque+2"
+                                alt="Destaque 2 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="hl-articles">
+                        <input type="checkbox" id="hl-expand-3" class="expand-toggle">
+                        <article class="card">
+                            <label for="hl-expand-3" class="carousel">
+                                <span class="badge badge-promocao">Promoção</span>
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Destaque+3a"
+                                    alt="Destaque 3 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f19203/ffffff?text=Destaque+3b"
+                                    alt="Destaque 3 - foto 2">
+                                <img class="slide" src="https://placehold.co/400x300/703800/ffffff?text=Destaque+3c"
+                                    alt="Destaque 3 - foto 3">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Faixa Litúrgica Dourada</h3>
+                        </article>
+                        <label for="hl-expand-3" class="overlay">
+                            <img src="https://placehold.co/800x600/f19203/ffffff?text=Destaque+3"
+                                alt="Destaque 3 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="hl-articles">
+                        <input type="checkbox" id="hl-expand-4" class="expand-toggle">
+                        <article class="card">
+                            <label for="hl-expand-4" class="carousel">
+                                <span class="badge badge-poucas">Poucas Unidades</span>
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Destaque+4a"
+                                    alt="Destaque 4 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f19203/ffffff?text=Destaque+4b"
+                                    alt="Destaque 4 - foto 2">
+                                <img class="slide" src="https://placehold.co/400x300/703800/ffffff?text=Destaque+4c"
+                                    alt="Destaque 4 - foto 3">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Coroa Processional</h3>
+                        </article>
+                        <label for="hl-expand-4" class="overlay">
+                            <img src="https://placehold.co/800x600/f19203/ffffff?text=Destaque+4"
+                                alt="Destaque 4 ampliado">
+                        </label>
+                    </div>
+                </section>
+            </div>
+
+            <div id="products">
+                <h2>Produtos</h2>
+                <section>
+                    <div class="product-articles">
+                        <input type="checkbox" id="prod-expand-1" class="expand-toggle">
+                        <article class="card">
+                            <label for="prod-expand-1" class="carousel">
+                                <img class="slide" src="https://placehold.co/400x300/fff4c2/703800?text=Produto+1a"
+                                    alt="Produto 1 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Produto+1b"
+                                    alt="Produto 1 - foto 2">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Estola Bordada</h3>
+                        </article>
+                        <label for="prod-expand-1" class="overlay">
+                            <img src="https://placehold.co/800x600/f1cd6b/703800?text=Produto+1"
+                                alt="Produto 1 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="product-articles">
+                        <input type="checkbox" id="prod-expand-2" class="expand-toggle">
+                        <article class="card">
+                            <label for="prod-expand-2" class="carousel">
+                                <img class="slide" src="https://placehold.co/400x300/fff4c2/703800?text=Produto+2a"
+                                    alt="Produto 2 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Produto+2b"
+                                    alt="Produto 2 - foto 2">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Véu de Ombro</h3>
+                        </article>
+                        <label for="prod-expand-2" class="overlay">
+                            <img src="https://placehold.co/800x600/f1cd6b/703800?text=Produto+2"
+                                alt="Produto 2 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="product-articles">
+                        <input type="checkbox" id="prod-expand-3" class="expand-toggle">
+                        <article class="card">
+                            <label for="prod-expand-3" class="carousel">
+                                <img class="slide" src="https://placehold.co/400x300/fff4c2/703800?text=Produto+3a"
+                                    alt="Produto 3 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Produto+3b"
+                                    alt="Produto 3 - foto 2">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Túnica Litúrgica</h3>
+                        </article>
+                        <label for="prod-expand-3" class="overlay">
+                            <img src="https://placehold.co/800x600/f1cd6b/703800?text=Produto+3"
+                                alt="Produto 3 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="product-articles">
+                        <input type="checkbox" id="prod-expand-4" class="expand-toggle">
+                        <article class="card">
+                            <label for="prod-expand-4" class="carousel">
+                                <img class="slide" src="https://placehold.co/400x300/fff4c2/703800?text=Produto+4a"
+                                    alt="Produto 4 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Produto+4b"
+                                    alt="Produto 4 - foto 2">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Faixa Bordada</h3>
+                        </article>
+                        <label for="prod-expand-4" class="overlay">
+                            <img src="https://placehold.co/800x600/f1cd6b/703800?text=Produto+4"
+                                alt="Produto 4 ampliado">
+                        </label>
+                    </div>
+
+                    <div class="product-articles">
+                        <input type="checkbox" id="prod-expand-5" class="expand-toggle">
+                        <article class="card">
+                            <label for="prod-expand-5" class="carousel">
+                                <img class="slide" src="https://placehold.co/400x300/fff4c2/703800?text=Produto+5a"
+                                    alt="Produto 5 - foto 1">
+                                <img class="slide" src="https://placehold.co/400x300/f1cd6b/703800?text=Produto+5b"
+                                    alt="Produto 5 - foto 2">
+                                <span class="dots">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </span>
+                            </label>
+                            <h3 class="product-name">Coroa Pequena</h3>
+                        </article>
+                        <label for="prod-expand-5" class="overlay">
+                            <img src="https://placehold.co/800x600/f1cd6b/703800?text=Produto+5"
+                                alt="Produto 5 ampliado">
+                        </label>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="botton-infos">
+        <footer>
+            <ul>
+                <li>Divino</li>
+                <li>etc</li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+
 </html>
